@@ -3,15 +3,16 @@ kind: Workload
 metadata:
   name: tanzu-java-web-app
   labels:
+    app.kubernetes.io/part-of: tanzu-java-web-app-live-view
     apps.tanzu.vmware.com/workload-type: web
-    app.kubernetes.io/part-of: tanzu-java-web-app
+    tanzu.app.live.view: "true"
+    tanzu.app.live.view.application.name: tanzu-java-web-app-live-view
 spec:
   params:
   - name: annotations
     value:
-      autoscaling.knative.dev/minScale: "1"
   source:
     git:
-      url: https://github.com/sample-accelerators/tanzu-java-web-app
       ref:
         branch: main
+      url: https://github.com/themapisto/tanzu-java-web-app2
